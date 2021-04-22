@@ -100,7 +100,7 @@ if [[ -e "${EXEC_ROOT}" ]]; then
 fi
 
 # shellcheck disable=SC2046
-"$BAZEL" build \
+"$BAZEL" build --config=clang \
   "--override_repository=bazel_compdb=${ASPECTS_DIR}" \
   "--aspects=@bazel_compdb//:aspects.bzl%compilation_database_aspect" \
   "--noshow_progress" \
